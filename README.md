@@ -1,6 +1,6 @@
 ## 简介
 
-Noteblocks是一个基于web的本地笔记应用。[在线Demo](https://noteblocks-roan.vercel.app/)
+Noteblocks是一个基于web的本地极简文本记录应用。[在线Demo](https://noteblocks-roan.vercel.app/)
 
 目前仅针对Windows使用，但理论上也可用于移动设备。
 
