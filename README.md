@@ -1,6 +1,6 @@
 ## 简介
 
-Noteblocks是一个基于web的本地笔记应用。[在线Demo](https://websim.com/@zjxdiu/noteblocks)
+Noteblocks是一个基于web的本地笔记应用。[在线Demo](https://noteblocks-roan.vercel.app/)
 
 目前仅针对Windows使用，但理论上也可用于移动设备。
 
@@ -32,7 +32,7 @@ PS：该程序与Minecraft中的音符盒（Note block）无任何关联。暂�
 
 2. 在线使用：
 
-   点击上方在线Demo访问Websim即可使用。该网站可能需要境外网络访问。
+   可通过上方[在线Demo](https://github.com/zjxdiu/Noteblocks#%E7%AE%80%E4%BB%8B)，或者访问项目源地址[https://websim.com/@zjxdiu/noteblocks](https://websim.com/@zjxdiu/noteblocks)即可使用（该网站可能需要境外网络访问）。
 
 3. 网页端部署：
 
