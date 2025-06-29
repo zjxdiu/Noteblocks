@@ -1,0 +1,93 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteBlocks</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>">
+</head>
+<body>
+    <header>
+        <h1>📝 NoteBlocks</h1>
+        <button id="theme-toggle-btn" title="Toggle Theme">🌙</button>
+    </header>
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <button id="add-note-btn" title="Add New Note">New Note</button>
+                <div class="action-buttons-extra">
+                    <button id="import-btn" title="Import notes from a file">Import</button>
+                    <button id="export-btn" title="Export all notes to a file">Export</button>
+                </div>
+                <input type="search" id="search-box" placeholder="Search titles...">
+            </div>
+            <nav id="notes-list"></nav>
+        </aside>
+        <div id="resizer"></div>
+        <main id="main-content">
+            <div id="note-editor" class="hidden">
+                <div class="note-editor-header">
+                    <input type="text" class="note-title" placeholder="Note Title">
+                    <button class="delete-note-btn" title="Delete Note">×</button>
+                </div>
+                <div class="note-content" contenteditable="true" data-placeholder="Start typing here..."></div>
+            </div>
+            <div id="placeholder-view">
+                <p>Select a note from the list to start editing, or create a new one.</p>
+            </div>
+        </main>
+    </div>
+
+    <template id="note-list-item-template">
+        <div class="note-list-item" tabindex="0">
+            <h2 class="note-list-title"></h2>
+        </div>
+    </template>
+
+    <template id="note-template">
+        <div class="note-block" tabindex="0">
+            <div class="note-header">
+                <input type="text" class="note-title" placeholder="Note Title">
+                <button class="delete-note-btn" title="Delete Note">×</button>
+            </div>
+            <div class="note-content" contenteditable="true" data-placeholder="Start typing here..."></div>
+        </div>
+    </template>
+
+    <input type="file" id="import-file-input" class="hidden" accept=".json">
+
+    <div id="import-conflict-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Import Conflicts</h2>
+                <button id="modal-close-btn" class="modal-close-btn" title="Cancel Import">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>The following notes already exist. Select the ones you want to overwrite with the imported version.</p>
+                <div class="conflict-list-header">
+                    <label>
+                        <input type="checkbox" id="select-all-conflicts"> Overwrite All
+                    </label>
+                </div>
+                <div id="conflict-list">
+                    <!-- Conflict items will be injected here by JS -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="import-skip-btn" class="modal-btn">Import New, Skip All Conflicts</button>
+                <button id="import-confirm-btn" class="modal-btn modal-btn-primary">Overwrite Selected & Import New</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="importmap">
+    {
+      "imports": {
+        "db": "./db.js"
+      }
+    }
+    </script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
